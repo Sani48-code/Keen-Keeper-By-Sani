@@ -27,12 +27,19 @@ export function FriendsProvider({ children }) {
     }))
   }, [])
 
+  const addFriend = useCallback((data) => {
+    setFriends(prev => {
+      const maxId = prev.reduce((m, f) => Math.max(m, f.id), 0)
+      return [...prev, { ...data, id: maxId + 1 }]
+    })
+  }, [])
+
   const getFriendById = useCallback((id) => {
     return friends.find(f => f.id == id) || null
   }, [friends])
 
   return (
-    <FriendsContext.Provider value={{ friends, deleteFriend, archiveFriend, snoozeFriend, getFriendById }}>
+    <FriendsContext.Provider value={{ friends, addFriend, deleteFriend, archiveFriend, snoozeFriend, getFriendById }}>
       {children}
     </FriendsContext.Provider>
   )

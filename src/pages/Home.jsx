@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
-import FriendCard   from '../components/FriendCard'
-import SummaryCard  from '../components/SummaryCard'
+import toast from 'react-hot-toast'
+import FriendCard      from '../components/FriendCard'
+import SummaryCard     from '../components/SummaryCard'
+import AddFriendModal  from '../components/AddFriendModal'
 import { useTimeline } from '../context/TimelineContext'
-import { useFriends } from '../context/FriendsContext'
+import { useFriends }  from '../context/FriendsContext'
 
 const FOREST = '#1B4332'
 
@@ -19,8 +21,9 @@ function LoadingSpinner() {
 }
 
 export default function Home() {
-  const [loading, setLoading] = useState(true)
-  const { friends } = useFriends()
+  const [loading,     setLoading]     = useState(true)
+  const [showModal,   setShowModal]   = useState(false)
+  const { friends, addFriend } = useFriends()
   const { entries } = useTimeline()
 
   useEffect(() => {
@@ -44,6 +47,11 @@ export default function Home() {
     { label: 'Interactions This Month', value: thisMonth      },
   ]
 
+  const handleAdd = (data) => {
+    addFriend(data)
+    toast.success(`${data.name} added to your friends!`)
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
 
@@ -59,6 +67,7 @@ export default function Home() {
           </p>
 
           <button
+            onClick={() => setShowModal(true)}
             className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-md text-white text-base font-semibold transition-opacity hover:opacity-90 active:opacity-80"
             style={{ backgroundColor: FOREST }}
           >
@@ -85,6 +94,13 @@ export default function Home() {
         ) : friends.length === 0 ? (
           <div className="flex flex-col items-center py-20 gap-3">
             <p className="text-gray-400 text-base">No friends yet. Add your first one!</p>
+            <button
+              onClick={() => setShowModal(true)}
+              className="px-5 py-2.5 rounded-md text-white text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ backgroundColor: FOREST }}
+            >
+              + Add a Friend
+            </button>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -92,6 +108,14 @@ export default function Home() {
           </div>
         )}
       </section>
+
+      {/* ── ADD FRIEND MODAL ───────────────────────────── */}
+      {showModal && (
+        <AddFriendModal
+          onClose={() => setShowModal(false)}
+          onAdd={handleAdd}
+        />
+      )}
 
     </div>
   )
