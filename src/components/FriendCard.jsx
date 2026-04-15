@@ -17,7 +17,7 @@ export default function FriendCard({ friend }) {
       role="button"
       tabIndex={0}
       aria-label={`View ${friend.name}`}
-      className="bg-white rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex flex-col items-center text-center p-6 gap-3"
+      className="bg-white rounded-xl cursor-pointer transition-all duration-200 hover:shadow-md hover:-translate-y-0.5 flex flex-col items-center text-center p-4 sm:p-5 lg:p-6 gap-3"
       style={{ border: '1px solid #E5E7EB' }}
     >
       {/* Circular avatar */}

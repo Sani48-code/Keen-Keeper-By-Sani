@@ -49,15 +49,15 @@ export default function Stats() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {/* Page heading */}
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
           Friendship Analytics
         </h1>
 
         {/* Chart card */}
         <div
-          className="bg-white rounded-xl px-6 py-6"
+          className="bg-white rounded-xl px-4 sm:px-6 py-5 sm:py-6"
           style={{ border: '1px solid #E5E7EB' }}
         >
           <p className="text-base font-semibold text-gray-700 mb-4">
@@ -71,14 +71,14 @@ export default function Stats() {
               </p>
             </div>
           ) : (
-            <ResponsiveContainer width="100%" height={380}>
+            <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie
                   data={pieData}
                   cx="50%"
                   cy="50%"
-                  innerRadius={80}
-                  outerRadius={130}
+                  innerRadius={60}
+                  outerRadius={100}
                   paddingAngle={4}
                   dataKey="value"
                   stroke="none"

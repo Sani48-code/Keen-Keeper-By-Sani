@@ -34,10 +34,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: FOREST }} className="text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-8 py-14 flex flex-col items-center text-center gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 sm:py-12 lg:py-14 flex flex-col items-center text-center gap-4">
 
         {/* Brand name */}
-        <p className="text-5xl font-bold leading-none tracking-tight">
+        <p className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-none tracking-tight">
           Keen<span className="font-extrabold">Keeper</span>
         </p>
 

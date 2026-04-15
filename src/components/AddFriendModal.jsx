@@ -83,7 +83,7 @@ export default function AddFriendModal({ onClose, onAdd }) {
 
         {/* ── Header ── */}
         <div
-          className="flex items-center justify-between px-7 pt-7 pb-5"
+          className="flex items-center justify-between px-5 sm:px-7 pt-5 sm:pt-7 pb-4 sm:pb-5"
           style={{ borderBottom: '1px solid #F3F4F6' }}
         >
           <div>
@@ -100,7 +100,7 @@ export default function AddFriendModal({ onClose, onAdd }) {
         </div>
 
         {/* ── Form ── */}
-        <form onSubmit={handleSubmit} className="px-7 py-6 flex flex-col gap-5">
+        <form onSubmit={handleSubmit} className="px-5 sm:px-7 py-5 sm:py-6 flex flex-col gap-5">
 
           {/* Name */}
           <div className="flex flex-col gap-1.5">
@@ -163,7 +163,7 @@ export default function AddFriendModal({ onClose, onAdd }) {
           </div>
 
           {/* Goal + Picture row */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-semibold text-gray-700">
                 Goal <span className="text-gray-400 font-normal">(days)</span>

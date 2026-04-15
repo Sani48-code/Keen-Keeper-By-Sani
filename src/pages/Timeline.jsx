@@ -14,12 +14,12 @@ export default function Timeline() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-6 py-10">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {/* Page heading */}
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">Timeline</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Timeline</h1>
 
         {/* Dropdown filter */}
-        <div className="relative inline-block mb-7">
+        <div className="relative inline-block mb-5 sm:mb-7">
           <select
             value={filter}
             onChange={e => setFilter(e.target.value)}

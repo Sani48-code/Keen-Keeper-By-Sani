@@ -57,8 +57,8 @@ export default function Home() {
 
       {/* ── BANNER ─────────────────────────────────────── */}
       <section className="bg-white">
-        <div className="max-w-4xl mx-auto px-8 pt-16 pb-12 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pt-10 sm:pt-14 md:pt-16 pb-8 sm:pb-10 md:pb-12 text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             Friends to keep close in your life
           </h1>
           <p className="text-base text-gray-500 mt-4 max-w-lg mx-auto leading-relaxed">
@@ -76,7 +76,7 @@ export default function Home() {
 
           {/* Summary cards */}
           {!loading && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-8 sm:mt-10 md:mt-12">
               {summaryCards.map(c => (
                 <SummaryCard key={c.label} label={c.label} value={c.value} />
               ))}
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* ── FRIENDS GRID ───────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-8 py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
         <h2 className="text-xl font-semibold text-gray-900 mb-6">Your Friends</h2>
 
         {loading ? (
@@ -103,7 +103,7 @@ export default function Home() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
             {friends.map(f => <FriendCard key={f.id} friend={f} />)}
           </div>
         )}

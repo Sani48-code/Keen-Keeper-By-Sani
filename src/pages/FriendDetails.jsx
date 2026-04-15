@@ -96,15 +96,15 @@ export default function FriendDetails() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-5xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-7">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-5 sm:gap-6 lg:gap-7">
 
           {/* ── LEFT COLUMN ──────────────────────────────── */}
           <div className="flex flex-col gap-5">
 
             {/* Profile card */}
             <div
-              className="bg-white rounded-xl p-7 flex flex-col items-center text-center gap-4"
+              className="bg-white rounded-xl p-5 sm:p-7 flex flex-col items-center text-center gap-4"
               style={{ border: '1px solid #E5E7EB' }}
             >
               {/* Circular avatar */}
@@ -173,7 +173,7 @@ export default function FriendDetails() {
           <div className="flex flex-col gap-6">
 
             {/* 3 stat cards */}
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-5">
               <StatsCard label="Days Since Contact" value={friend.days_since_contact} />
               <StatsCard label="Goal (Days)"        value={friend.goal}               />
               <StatsCard label="Next Due"            value={formatDate(friend.next_due_date)} />
@@ -181,7 +181,7 @@ export default function FriendDetails() {
 
             {/* Relationship Goal */}
             <div
-              className="bg-white rounded-xl px-7 py-6"
+              className="bg-white rounded-xl px-4 sm:px-6 md:px-7 py-5 sm:py-6"
               style={{ border: '1px solid #E5E7EB' }}
             >
               <div className="flex items-center justify-between mb-3">
@@ -200,12 +200,12 @@ export default function FriendDetails() {
 
             {/* Quick Check-In */}
             <div
-              className="bg-white rounded-xl px-7 py-6"
+              className="bg-white rounded-xl px-4 sm:px-6 md:px-7 py-5 sm:py-6"
               style={{ border: '1px solid #E5E7EB' }}
             >
               <p className="text-base font-semibold text-gray-800 mb-5">Quick Check-In</p>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4">
                 {[
                   { type: 'call',  icon: callIcon,  label: 'Call'  },
                   { type: 'text',  icon: textIcon,  label: 'Text'  },
@@ -235,7 +235,7 @@ export default function FriendDetails() {
             {/* Interaction history */}
             {friendEntries.length > 0 && (
               <div
-                className="bg-white rounded-xl px-7 py-6"
+                className="bg-white rounded-xl px-4 sm:px-6 md:px-7 py-5 sm:py-6"
                 style={{ border: '1px solid #E5E7EB' }}
               >
                 <p className="text-base font-semibold text-gray-800 mb-3">
