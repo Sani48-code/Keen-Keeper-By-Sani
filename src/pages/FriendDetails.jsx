@@ -79,7 +79,6 @@ export default function FriendDetails() {
   }
 
   const handleDelete = () => {
-    if (!window.confirm(`Delete ${friend.name}? This cannot be undone.`)) return
     setActionBusy('delete')
     setTimeout(() => {
       deleteFriend(friend.id)
